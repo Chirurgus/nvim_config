@@ -16,3 +16,4 @@ iwr -useb https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim |`
 Now install all the plugins by opening Neovim and running `:PlugInstall`.
 
 Good to go !
+
