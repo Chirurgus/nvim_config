@@ -8,3 +8,8 @@ To make NeoVim use the same configuration copy `init.vim` to $MYVIMRC.
 Then install plugins using `:PlugInstall`.
 
 
+# Installation
+
+```
+cp -r vimfiles ~/
+```
