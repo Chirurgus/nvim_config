@@ -14,9 +14,9 @@
 " This configuration file is also serves as an installation script
 
 if has('win32')
-    let VIMFILES = glob($HOME . 'vimfiles')
+    let VIMFILES = $HOME . '/vimfiles'
 else
-    let VIMFILES = glob($HOME . '.vim')
+    let VIMFILES = $HOME . '/.vim'
 endif
 
 " Use powershell as shell on Windows
@@ -30,8 +30,8 @@ endif
 
 " Install vim config if does not exist (copy vimfiles to $HOME)
 " Must be executed from root of config respoitory, i.e. `:source vimfiles/vimrc`
-if empty($VIMFILES)
-  silent! execute '!cp vimfiles ' . $VIMFILES
+if empty(VIMFILES)
+  silent! execute '!cp vimfiles ' . VIMFILES
 endif
 
 " }}}
@@ -130,8 +130,6 @@ call plug#begin()
   Plug 'jpalardy/vim-slime'
 call plug#end()
 
-:NERDTreeChDirMode 2
-
 " }}}
 
 " Mappings --------------------------------------------------------------- {{{
@@ -199,7 +197,7 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 
 " Visuals --------------------------------------------------------------- {{{
 
-colorscheme shine 
+colorscheme shine
 
 " }}}
 
