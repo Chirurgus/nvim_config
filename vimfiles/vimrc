@@ -19,7 +19,6 @@ else
     let VIMFILES = $HOME . '/.vim'
 endif
 
-" Use powershell as shell on Windows
 if has('win32')
     let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
     let &shellcmdflag = '-NoLogo -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.UTF8Encoding]::new();$PSDefaultParameterValues[''Out-File:Encoding'']=''utf8'';'
@@ -28,11 +27,14 @@ if has('win32')
     set shellquote= shellxquote=
 endif
 
+
+" Use powershell as shell on Windows
+" 
 " Install vim config if does not exist (copy vimfiles to $HOME)
 " Must be executed from root of config respoitory, i.e. `:source vimfiles/vimrc`
-if empty(VIMFILES)
-  silent! execute '!cp vimfiles ' . VIMFILES
-endif
+" if empty(VIMFILES)
+"   silent! execute '!cp vimfiles ' . VIMFILES
+" endif
 
 " }}}
 
@@ -299,3 +301,24 @@ set statusline+=\ ascii:\ %b\ hex:\ 0x%B\ row:\ %l\ col:\ %c\ percent:\ %p%%
 set laststatus=2
 
 " }}}
+
+" List of useful but rare commands ---------------------------- {{{
+
+" Save/open with unix/dos lineendings (fileformat)
+" Read/write with dos fileformat
+" :e ++ff=dos filename
+" :w ++ff=dos filename
+" Same but for unix
+" :e ++ff=unix filename
+" :w ++ff=unix filename
+
+" }}}
+
+" Testing ----------------------------------------------------- {{{
+
+" To get terminal id ":echo b:terminal_job_id"
+let g:slime_target = "neovim"
+
+
+" }}}
+
