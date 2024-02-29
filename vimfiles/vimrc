@@ -199,7 +199,8 @@ let NERDTreeIgnore=['\.git$', '\.jpg$', '\.mp4$', '\.ogg$', '\.iso$', '\.pdf$', 
 
 " Visuals --------------------------------------------------------------- {{{
 
-colorscheme shine
+set background=light
+colorscheme solarized
 
 " }}}
 
